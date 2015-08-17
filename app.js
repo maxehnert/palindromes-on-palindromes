@@ -1,5 +1,32 @@
-// A function that returns true for palindrome words.
+$('.submit-form-btn').click( function(){
 
+  if ($('#optionsRadios1').prop("checked") ) {
+    //palindrome($('.string-input').val())
+    if(palindrome($('.string-input').val()) === true ){
+      $('.result').text('Yes, ' + $('.string-input').val() + ' is a Palindrome.');
+    } else {
+      $('.result').text('No, ' + $('.string-input').val() + ' is not a Palindrome.');
+    }
+
+  } else if ( $('#optionsRadios2').prop("checked") ) {
+
+    if(canBePalindrome($('.string-input').val()) === true ){
+      $('.result').text('Yes, ' + $('.string-input').val() + ' can be a Palindrome.');
+    } else {
+      $('.result').text('No, ' + $('.string-input').val() + ' cannot be a Palindrome.');
+    }
+
+  } else if ( $('#optionsRadios3').prop("checked") ) {
+
+    if(arrangeIntoPalindrome($('.string-input').val()) !== -1 ){
+      $('.result').text("Here's your fresh Palindrome: " + arrangeIntoPalindrome($('.string-input').val()));
+    } else {
+      $('.result').text('No, ' + $('.string-input').val() + ' cannot be a Palindrome.');
+    }
+  }
+});
+
+// A function that returns true for palindrome words.
 function palindrome(str) {
     var len = str.length;
     for ( var i = 0; i < Math.floor(len/2); i++ ) {
@@ -9,8 +36,8 @@ function palindrome(str) {
     }
     return true;
 }
-// A function that checks if a string can be a palindrome.
 
+// A function that checks if a string can be a palindrome.
 function canBePalindrome(str) {
     // set the string to lower case first
     var str = str.toLowerCase();
@@ -32,16 +59,15 @@ function canBePalindrome(str) {
     return palindromeSum < 2;
 }
 
-canBePalindrome('aaa'); // true
-canBePalindrome('aa1'); // true
-canBePalindrome('aA1'); // true
-canBePalindrome('aabb'); // true
-canBePalindrome('aabbc'); // true
-canBePalindrome('abbc'); // false
+//canBePalindrome('aaa'); // true
+// canBePalindrome('aa1'); // true
+// canBePalindrome('aA1'); // true
+// canBePalindrome('aabb'); // true
+// canBePalindrome('aabbc'); // true
+// canBePalindrome('abbc'); // false
 
 // Given a string, a function that can reorganize it into a Palindrome. If it is not a palindrome, return -1
-
-function canBePalindrome(str) {
+function arrangeIntoPalindrome(str) {
     // set the string to lower case first
     var str = str.toLowerCase();
 
@@ -97,11 +123,10 @@ function canBePalindrome(str) {
     }
 
 }
-canBePalindrome('babccab'); //'acbbbca'
-canBePalindrome('abca'); // -1
+// canBePalindrome('babccab'); //'acbbbca'
+// canBePalindrome('abca'); // -1
 
 // Given an array of strings now, this function can reorganize all of them into Palindromes. If it is not a palindrome, return -1 for that value
-
 function canBePalindromeArray(arr) {
 
   var finalArr = [];
@@ -167,4 +192,4 @@ function canBePalindromeArray(arr) {
   });
   return finalArr;
 }
-canBePalindromeArray(['abcac', 'abc', 'gshgh', 'dd ff']);
+//canBePalindromeArray(['abcac', 'abc', 'gshgh', 'dd ff']);

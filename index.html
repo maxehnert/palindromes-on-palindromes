@@ -1,9 +1,46 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Palindromes On Palindromes</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
+  <main class="col-md-6 col-md-offset-3">
+    <h1>Palindrome Checker</h1>
+
+      <div class="form-group">
+        <label for="stringInput">Input Your Word</label>
+        <input type="text" class="form-control string-input" placeholder="example: abbioaoi">
+      </div>
+
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+          Am I a Palindrome?
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+          Can I be a Palindrome?
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+          Make me a Palindrome!
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-default submit-form-btn">Submit</button>
+    <h2 class="result"></h2>
+  </main>
+
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="app.js"></script>
 
 </body>
 </html>
