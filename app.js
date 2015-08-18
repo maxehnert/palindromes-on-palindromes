@@ -26,6 +26,12 @@ $('.submit-form-btn').click( function(){
   }
 });
 
+$('.clear-form-btn').click( function() {
+  $('.string-input').val('');
+  $('.result').text('');
+  $('input[type="radio"]').prop("checked", false);
+});
+
 // A function that returns true for palindrome words.
 function palindrome(str) {
     var len = str.length;
